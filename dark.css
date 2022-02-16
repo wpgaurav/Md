@@ -1,0 +1,185 @@
+body {
+    background-color: #1c1c1c;
+    color: #ffffff;
+}
+
+input,textarea {
+    background-color: #1b1b1b;
+}
+
+.content{
+    color: #ddd;
+}
+.content a, .content h2, .content h3, .content h4, .content h5, .content h1, a{
+    color:#ffd700
+}
+blockquote, .quote-box {
+    background-color: #000;
+    color:#fff;
+}
+
+.wp-block-image figcaption {
+    color: #ddd;
+ 
+}
+
+.loop-default.style-default .post-box {
+    background-color: #1b1b1b;
+}
+
+.loop-docs.style-default .col-style,.loop-docs.style-default .post-box {
+    background-color: #1b1b1b;
+}
+
+
+.style-default .blog-teaser {
+    background-color: #1b1b1b;
+}
+
+.loop-blocks.style-default .post-box {
+    background-color: #1b1b1b;
+}
+
+
+.loop-blocks .content-text {
+    color: #eee;
+}
+
+.sidebar {
+    background-color: #1b1b1b;
+    color: #eee;
+}
+
+.sidebar a:not(.button) {
+    border-bottom: 1px solid #000887;
+    color: #000887;
+}
+
+html[color-mode="dark"].sidebar .sidebar-title {
+    color: #fff;
+}
+
+
+
+@media all and (min-width: 900px) {
+.sub-menu {
+        background-color: #1b1b1b;
+    }
+
+    .menu-header .sub-menu .menu-item-has-children:before {
+        content: '\e816';
+        color: #ddd;
+     }
+}
+
+.header {
+    background-color: #1b1b1b;
+    color: #eee;
+}
+.custom-logo-link {
+    filter:invert(0.8);
+}
+
+.header a {
+    color: #eee;
+    
+}
+
+.menu-header > .menu-item.current-menu-item > a {
+    color: #ffd700;
+}
+
+.byline {
+    color: #ddd;
+}
+
+.byline a {
+    color: #fff;
+}
+
+.pagination .page-numbers {
+    background-color: #000;
+    border-color: #999
+}
+.comments-title span a {
+    color: #fff;
+    font-size: 0.8em;
+    font-weight: 400;
+}
+
+.comments-tabs {
+    background-color: #1b1b1b;
+}
+
+.comments-tabs .comment-tab {
+    color: #ffff;
+}
+
+.comments-tabs .comment-tab.active {
+    background-color: #000;
+    border-bottom-color: #999;
+    color: #eee;
+}
+
+
+.comments-list > .comment {
+    background-color: #000;
+    border: 1px solid #999;
+}
+
+.comment-byline {
+    border-bottom: 1px solid #999;
+}
+
+.comment-byline .byline-author {
+    color: #ffffff;
+}
+
+.comment-byline .byline-author a {
+    color: #ffffff;
+}
+
+
+
+#cancel-comment-reply-link {
+    color: #ffd700;
+}
+
+.style-default .box-style,.style-default .box-style-list ul,.style-default .tagcloud,.style-default #wp-calendar {
+    background-color: #1b1b1b;
+    color: #fff;
+}
+
+.accordion {
+    background-color: #1b1b1b;
+}
+
+.accordion-title {
+    color: #ffffff;
+}
+
+.sidebar .accordion a {
+    border-bottom: 0;
+    color: #ffd700;
+}
+
+
+.footnote-text {
+    color: #fff;
+}
+
+.footnote-text-number {
+    color: #ffffff;
+}
+
+.glossary-letters {
+    background-color: #1b1b1b;
+}
+
+.stream-widget, .white, .pattern, article div, table, td, th {
+    background-color: #1b1b1b!important;
+    color: #ffffff!important;
+}
+table tr:nth-child(2n-1) td{
+    background-color:#000
+}

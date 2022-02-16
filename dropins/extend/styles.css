@@ -1,0 +1,17 @@
+.badge {
+    background-color: #f58f2a;
+    border-radius: 2px;
+    color: #fff;
+    margin-left: 4px;
+    font-size: 13px;
+    padding: 3px 5px 3px 4px;
+    position: relative;
+    text-transform: uppercase;
+}
+a.badge { border-bottom: 0; }
+.middot:not(:last-child):after {
+	content: '\00b7';
+	margin-left: 6px;
+	margin-right: 3px;
+}
+.highlight{background:#EFDD8D;padding:0 3px;}
