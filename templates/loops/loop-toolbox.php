@@ -4,7 +4,8 @@
    $the_query = new WP_Query( array(
    	'post_type' => 'tool',
       'posts_per_page' => -1,
-	   'ignore_sticky_posts' => 1
+	   'ignore_sticky_posts' => 1,
+	   'orderby' => 'modified'
    )); 
 ?>
 
@@ -12,18 +13,20 @@
 <div class="content-standard content-tease mt-single inner">
 	<div class="columns-3 columns-single columns-flex">
 		<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-		<article id="content-<?php the_ID(); ?>" class="col mb-single">
+		<article id="content-<?php the_ID(); ?>" class="col mb-single min-h">
 			<div class="white" style="border:1px solid #ddd">
 					<?php md_hook_teaser_top(); ?>
 					<?php if ( has_post_thumbnail() ) : ?>
-			<?php md_featured_image( 'above_headline', 'md-banner' ); ?>
+				<a style="border-bottom:0" href="<?php the_permalink(); ?>" title="<?php echo sprintf( __( 'Learn more about %s', 'md' ), the_title_attribute( 'echo=0' ) ); ?>" rel="nofollow sponsored"><?php md_featured_image( 'above_headline', 'md-banner' ); ?></a>
 					<?php endif; ?>
-			<h3 class="med-title text-center block-single-tb"><?php the_title(); ?></h3>
-    <div class="text-center">
-			<div style="font-size:17px; line-height:1.5; padding-left:15px; padding-right:15px">
+				<h3 class="med-title text-center mt-single"><a style="border-bottom:0" href="<?php the_permalink(); ?>" title="<?php echo sprintf( __( 'Learn more about %s', 'md' ), the_title_attribute( 'echo=0' ) ); ?>" rel="nofollow sponsored"><?php the_title(); ?></a></h3>
+    <div class="text-center min-h">
+		<?php if( get_field('coupon_code') ): ?>
+	<p class="md-coupon has-coupon-icon"><?php the_field('coupon_code'); ?></p>
+<?php endif; ?>
+			<div style="font-size:17px; line-height:1.5; padding:15px;">
 				<?php the_excerpt();?>
 			</div>
-			<div class="cta-area text-center block-single-tb"><a class="button button-arrow" href="<?php the_field('cta_link');?>" title="<?php the_field('cta');?>" rel="external nofollow sponsored" target="_blank"><?php the_field('cta');?></a></div>
 			</div>
 		</div>
 		</article>

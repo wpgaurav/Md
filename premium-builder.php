@@ -1,13 +1,13 @@
 <?php
 /**
- * Template Name: Premium Builder
- * Template Post Type: post, page, snippet, deal, glossary, docs, lesson
+ * Template Name: Premium Builder Template
+ * Template Post Type: post, page
  */
 ?>
 
 <?php get_header(); ?>
 
-<div class="builder format">
+<div class="builder format premium-builder">
 	<?php if ( have_posts() ) : ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 			<?php do_action( 'builder_template_' . get_the_ID() ); ?>

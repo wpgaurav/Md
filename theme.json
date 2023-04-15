@@ -1,0 +1,471 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 2,
+    "settings": {
+      "color": {
+        "defaultPalette": false,
+        "duotone": [],
+        "customDuotone": false,
+        "defaultGradients": true,
+		"customGradient": true,
+        "palette": [
+		{
+            "name": "Primary",
+            "slug": "primary",
+            "color": "#c0392b" 
+        },
+        {
+            "name": "Secondary",
+            "slug": "secondary",
+            "color": "#43a047" 
+        },
+          {
+            "name": "Tertiary",
+            "slug": "tertiary",
+            "color": "#001e12"
+          },
+          {
+            "name": "Action",
+            "slug": "action",
+            "color": "#1944a8"
+          },
+          {
+            "name": "Accent New",
+            "slug": "accent-new",
+            "color": "#F7B500"
+          },
+          {
+            "name": "White",
+            "slug": "white",
+            "color": "#ffffff"
+          },
+          {
+            "name": "Text Secondary",
+            "slug": "text-sec",
+            "color": "#555555"
+          },
+          {
+            "name": "Button Secondary",
+            "slug": "button-sec",
+            "color": "#001947"
+          },
+          {
+            "name": "Almond",
+            "slug": "almond",
+            "color": "#ffebcd"
+          },
+          {
+            "name": "Bodified",
+            "slug": "bodified",
+            "color": "#faf8f6"
+          },
+          {
+            "name": "BlueAlice",
+            "slug": "aliceblue",
+            "color": "#f0f8ff"
+          },
+          {
+            "name": "Peach",
+            "slug": "peach",
+            "color": "#ffdab9"
+          },
+          {
+            "name": "Thistle",
+            "slug": "thistle",
+            "color": "#d8bfd8"
+          },
+          {
+            "name": "Yellow Green",
+            "slug": "yellow-green",
+            "color": "#9acd32"
+          },
+			{
+            "name": "Bordered",
+            "slug": "bordered",
+            "color": "#e5e7eb"
+          },
+			{
+            "name": "BG Highlight",
+            "slug": "bg-highlight",
+            "color": "#111827"
+          },
+			{
+            "name": "Off White",
+            "slug": "offwhite",
+            "color": "#F6F6F6"
+          },
+			{
+            "name": "Subtle Green",
+            "slug": "subtle-green",
+            "color": "#117c68"
+          },
+		{
+            "name": "Green Card",
+            "slug": "green-card",
+            "color": "#f1fdf8"
+          },
+		{
+            "name": "Orange Card",
+            "slug": "orange-card",
+            "color": "#fef1f0"
+          },
+		{
+            "name": "Red Card",
+            "slug": "red-card",
+            "color": "#ffe7e7"
+          },
+		{
+            "name": "My Yellow",
+            "slug": "my-yellow",
+            "color": "#ffd700"
+          },
+		{
+            "name": "Latest Green",
+            "slug": "latest-green",
+            "color": "#6fa11e"
+          },
+		{
+            "name": "Shade Yellow",
+            "slug": "shade-yellow",
+            "color": "#ffdf88"
+          },
+		{
+            "name": "Latest Red",
+            "slug": "latest-red",
+            "color": "#c62035"
+          },
+		{
+            "name": "TextShade",
+            "slug": "textshade",
+            "color": "#263055"
+          }
+        ],
+		"gradients": [
+				{
+					"slug": "subtle-green-to-light",
+					"gradient": "linear-gradient(180deg, #d3fff5, #ffffff)",
+					"name": "Subtle Green to Light"
+				},
+			{
+					"slug": "hard-green-to-green",
+					"gradient": "linear-gradient(#9ec14c,#41b14f)",
+					"name": "Hard Green to Green"
+				},
+			{
+					"slug": "button-yellow",
+					"gradient": "linear-gradient(#ffd700, #F7B500)",
+					"name": "Button Yellow"
+				},
+			{
+					"slug": "theme-black",
+					"gradient": "linear-gradient(220.55deg,#222 0%,#5d1818 100%)",
+					"name": "Theme Black"
+				},
+			{
+					"slug": "theme-purple",
+					"gradient": "linear-gradient(220.55deg, #A531DC 0%, #4300B1 100%))",
+					"name": "Theme Purple"
+				},
+			{
+					"slug": "theme-rednew",
+					"gradient": "radial-gradient(circle, rgba(160,4,26,1) 0%, rgba(36,2,46,1) 100%)",
+					"name": "Theme RedNew"
+				},
+			{
+					"slug": "theme-yellow",
+					"gradient": "linear-gradient( 109.6deg,  rgba(255,207,84,1) 11.2%, rgba(255,158,27,1) 91.1% )",
+					"name": "Theme Yellow"
+				},
+			
+			{
+					"slug": "theme-green",
+					"gradient": "radial-gradient( circle farthest-corner at -1% 57.5%,  rgba(19,170,82,1) 0%, rgba(0,102,43,1) 90% )",
+					"name": "Theme Green"
+				},
+			
+			{
+					"slug": "theme-blue",
+					"gradient": "radial-gradient( circle 609.6px at 21.5% 78.8%,  rgba(37,99,219,1) 0%, rgba(233,45,181,1) 89.9% )",
+					"name": "Theme Blue"
+				},
+			
+			{
+					"slug": "theme-red",
+					"gradient": "linear-gradient( 179.4deg,  rgba(132,56,122,1) 14.6%, rgba(190,24,49,1) 104.7% )",
+					"name": "Theme Red"
+				},
+			
+			{
+					"slug": "theme-default",
+					"gradient": "radial-gradient( circle farthest-corner at 10% 20%,  rgba(14,174,87,1) 0%, rgba(12,116,117,1) 90% )",
+					"name": "Theme Default"
+				}
+			]
+      },
+	"appearanceTools": true,
+	"spacing": {
+		"blockGap": true,
+        "margin": true,
+        "padding": true,
+        "units": ["%","px","em","rem","vh","vw"]
+        },
+	"layout": {
+        "contentSize": "750px",
+        "wideSize": "960px"
+      },
+	"spacing": {
+			"spacingScale": {
+				"steps": 0
+			},
+			"spacingSizes": [
+				{
+					"size": "clamp(0.5rem, 2vw, 0.7rem)",
+					"slug": "30",
+					"name": "1"
+				},
+				{
+					"size": "clamp(0.6rem, 0.6rem + ((1vw - 0.48rem) * 1.65), 1rem)",
+					"slug": "40",
+					"name": "2"
+				},
+				{
+					"size": "clamp(1rem, 3vw, 2.5rem)",
+					"slug": "50",
+					"name": "3"
+				},
+				{
+					"size": "clamp(1.25rem, 3.33vw, 3.33rem)",
+					"slug": "60",
+					"name": "4"
+				},
+				{
+					"size": "clamp(2rem, 2.25rem + ((1vw - 0.48rem) * 3.096), 4rem)",
+					"slug": "70",
+					"name": "5"
+				},
+				{
+					"size": "clamp(3rem, 7vw, 6rem)",
+					"slug": "80",
+					"name": "6"
+				}
+			],
+			"units": [
+				"%",
+				"px",
+				"em",
+				"rem",
+				"vh",
+				"vw"
+			]
+		},
+	"typography": {
+		  "customFontSize": true,
+		  "customLineHeight": true,
+		  "dropCap": true,
+		  "fluid": true,
+		"fontFamilies": [
+				{
+					"fontFamily": "SF Pro,ui-sans-serif,sans-serif",
+					"name": "System",
+					"slug": "primary",
+					"fontFace": []
+				},
+				{
+					"fontFamily": "monospace",
+					"name": "Monospace",
+					"slug": "monospace",
+					"fontFace": []
+				}
+			],
+			"fontSizes": [
+				{
+					"fluid": {
+						"min": ".9rem",
+						"max": "1rem"
+					},
+					"size": "1rem",
+					"slug": "x-small",
+					"name": "Extra Small"
+				},
+				{
+					"fluid": {
+						"min": "1rem",
+						"max": "1.2rem"
+					},
+					"size": "1.2rem",
+					"slug": "small"
+				},
+				{
+					"fluid": {
+						"min": "1.13rem",
+						"max": "1.3rem"
+					},
+					"size": "1.3rem",
+					"slug": "base",
+					"name": "Base"
+				},
+				{
+					"fluid": {
+						"min": "1.3rem",
+						"max": "1.6rem"
+					},
+					"size": "1.6rem",
+					"slug": "medium"
+				},
+				{
+					"fluid": {
+						"min": "1.5rem",
+						"max": "2rem"
+					},
+					"size": "2rem",
+					"slug": "large"
+				},
+				{
+					"fluid": {
+						"min": "2rem",
+						"max": "2.8rem"
+					},
+					"size": "2.8rem",
+					"slug": "x-large"
+				},
+				{
+					"fluid": {
+						"min": "2.6rem",
+						"max": "3.75rem"
+					},
+					"size": "3.75rem",
+					"slug": "xx-large",
+					"name": "2xl"
+				},
+				{
+					"fluid": {
+						"min": "3rem",
+						"max": "4.8rem"
+					},
+					"size": "4.8rem",
+					"slug": "xxx-large",
+					"name": "3xl"
+				}
+			],
+			"lineHeight": true
+		},
+		"useRootPaddingAwareAlignments": true
+	},
+    "styles": {
+		"blocks": {
+			"core/paragraph": {
+				"typography": {
+					"lineHeight": "calc(1.7em + .2vw)"
+				}
+			},
+			"core/heading": {
+				"typography": {
+					"lineHeight": "calc(1em + .2vw)"
+				}
+			},
+			"core/button": {
+                "color": {
+                    "background": "var(--wp--preset--color--primary)"
+                },
+				"border": {
+                    "radius": "5px"
+                },
+                "typography": {
+                    "fontWeight": "700"
+                }
+            },
+			"core/buttons": {
+                "spacing": {
+                    "blockGap": "10px"
+                }
+            },
+			"core/code": {
+                "border": {
+                    "radius": "0",
+                    "width": "0"
+                },
+                "color": {
+                    "background": "var(--wp--preset--color--bg-highlight)",
+                    "text": "var(--wp--preset--color--white)"
+                },
+				"spacing": {
+					"margin": {
+						"bottom": "1em"
+					},
+					"padding": {
+						"top": "2em",
+						"bottom": "2em",
+						"left":"1em",
+						"right":"1em"
+					}
+				}
+			},
+			"core/group": {
+				"border": {
+                    "radius": "0",
+                    "width": "0"
+                },
+				"spacing": {
+					"padding": {
+						"top": "2em",
+						"bottom": "2em",
+						"left":"1em",
+						"right":"1em"
+					}
+				}
+			},
+			"core/cover": {
+				"border": {
+                    "radius": "5px",
+                    "width": "0"
+                },
+				"spacing": {
+					"margin": {
+						"bottom": "1em"
+					},
+					"padding": {
+						"top": "2em",
+						"bottom": "2em",
+						"left":"1em",
+						"right":"1em"
+					}
+				}
+			},
+			"core/pullquote": {
+				"spacing": {
+					"padding": {
+						"top": "0",
+						"bottom": "0",
+						"left":"0",
+						"right":"0"
+					}
+				}
+			},
+			"core/table": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--small)"
+				}
+			},
+			"core/image": {
+				"spacing": {
+					"margin": {
+						"top": "1em",
+						"bottom":"1em"
+					}
+				}
+			}
+	},
+      "elements": {
+		 "button": {
+                "border": {
+                    "radius": "4px"
+                }
+		 },
+        "link": {
+            "color": {
+                "text": "var(--wp--preset--color--primary)"
+            }
+        }
+    }
+    }
+  }

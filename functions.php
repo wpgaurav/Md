@@ -10,10 +10,17 @@ require_once( get_template_directory() . '/lib/marketers-delight.php' );
 require_once( 'loader.php' );
 
 // run MD design mode (rebuilds dynamic CSS from style.php on every page load)
-// md_compile_css();
+// md_compile();
 // dropins
-include( 'dropins/docs/docs.php' );
-include( 'dropins/extend/extend.php' );
+// include( 'dropins/docs/docs.php' );
+// include( 'dropins/extend/extend.php' );
+// include( 'dropins/related-posts/related-posts.php' );
+/* function md_new_remove_wp_block_library_css(){
+    wp_dequeue_style( 'wp-block-library' );
+    wp_dequeue_style( 'wp-block-library-theme' );
+    wp_dequeue_style( 'wc-blocks-style' ); // Remove WooCommerce block CSS
+} 
+add_action( 'wp_enqueue_scripts', 'md_new_remove_wp_block_library_css', 100 ); */
 /* function custom_blocks_css() {
 	if (is_singular() && !(is_front_page())) {
 		wp_enqueue_style( 
@@ -23,38 +30,39 @@ include( 'dropins/extend/extend.php' );
   }
 }
 add_action( 'wp_enqueue_scripts', 'custom_blocks_css', 1 ); */
-add_action(
-	'enqueue_block_editor_assets',
-	function () {
-		$theme = wp_get_theme();
-		wp_enqueue_style(
-		'block-md-custom-css', '/wp-content/themes/Md/custom-editor.css'
-		);
-	}
-);
 function new_code(){
-	if(is_page('12970')){
-		get_template_part( 'templates/loops/loop', 'snippet' );
-	}
 	if(is_page('wordpress-plugins')){
 		get_template_part( 'templates/loops/loop', 'plugins' );
 	}
-	if(is_page('toolbox')){
+	/* if(is_page('toolbox')){
 		get_template_part( 'templates/loops/loop', 'toolbox' );
-	}
+	} */
 }
 add_action('md_hook_after_content', 'new_code', 330);
 /* function sidebar_deal_ad(){
 	get_template_part( 'templates/loops/loop', 'coupon' );
 }
 add_action('md_hook_after_sidebar', 'sidebar_deal_ad', 330); */
-function post_series_fix(){
+/* function post_series_fix(){
 	if(is_tax('post_series')){
 	remove_action( 'md_hook_content', 'md_loop' );
 	remove_action( 'md_hook_content', 'md_pagination', 30 );
 }
 }
-add_action('template_redirect', 'post_series_fix');
+add_action('template_redirect', 'post_series_fix'); */
+/* function category_cleanr(){
+	if(is_category('hosting')){
+	remove_action( 'md_hook_content', 'md_loop' );
+	remove_action( 'md_hook_content', 'md_pagination', 30 );
+}
+}
+add_action('template_redirect', 'category_cleanr'); */
+function remove_byline_select(){
+	if(is_singular(array('glossary','docs','download'))){
+	remove_action( 'md_hook_after_headline', 'md_byline' );
+}
+}
+add_action('template_redirect', 'remove_byline_select');
 /* Remove Jetpack Sharedaddy Sharing from post excerpts */
 
 // add_action( 'init', 'remove_sharedaddy_excerpt_sharing', 20 );
@@ -62,29 +70,23 @@ add_action('template_redirect', 'post_series_fix');
 /* function remove_sharedaddy_excerpt_sharing() {
    remove_filter( 'the_excerpt', 'sharing_display', 19 );
 } */
-function single_offers(){
+/* function single_offers(){
 	if(is_singular(array('post','deal'))){
 		echo do_shortcode('[sc name="mo-after-post"][/sc]');
 	}
 }
-add_action('md_hook_content_item', 'single_offers', 40);
+add_action('md_hook_content_item', 'single_offers', 40); */
 // function md_child_theme_posts_slider() {
 // 	get_template_part( 'templates/loops/posts', 'slider' );
 // }
 
 // add_action( 'md_hook_after_header', 'md_child_theme_posts_slider' ); */
-function new_excerpt_more($more) {
-  global $post;
-  remove_filter('excerpt_more', 'new_excerpt_more'); 
-  return ' ';
-}
-add_filter('excerpt_more','new_excerpt_more', 330);
 function md_child_sidebar() {
-    if ( is_search() || is_author() || is_post_type_archive('deal') || is_tag()) {
+    if ( is_search() || is_author() || is_post_type_archive() || is_tag() || is_archive() || is_tax()) {
         add_filter( 'md_filter_has_sidebar', '__return_true' );
 	}
-	if (is_singular(array('product', 'lesson'))){
-		add_filter( 'md_filter_has_sidebar', '__return_false' );
+	if ( is_singular('hindi') || is_post_type_archive('hindi') || is_singular('glossary') || is_post_type_archive('glossary') || is_404()) {
+        add_filter( 'md_filter_has_sidebar', '__return_false' );
 	}
 }
 add_action( 'template_redirect', 'md_child_sidebar' );
@@ -100,10 +102,9 @@ add_action( 'md_hook_before_content_box', 'md_before_deals' );
 
 function md_add_post_type_meta( $post_type ) {
     $post_type[] = 'snippet';
-	$post_type[] = 'coupon';
 	$post_type[] = 'deal';
-	$post_type[] = 'portfolio';
-	$post_type[] = 'course';
+	$post_type[] = 'product';
+	$post_type[] = 'tool';
 	$post_type[] = 'lesson';
 	$post_type[] = 'question';
     return $post_type;
@@ -118,7 +119,7 @@ function md_add_taxonomy_meta( $taxonomy ) {
     $taxonomy[] = 'deal_type';
     $taxonomy[] = 'programming_language';
 	$taxonomy[] = 'post_series';
-	$taxonomy[] = 'coupon_type';
+	$taxonomy[] = 'tool_type';
     return $taxonomy;
 }
 add_filter( 'md_taxonomy_meta', 'md_add_taxonomy_meta' );
@@ -132,8 +133,8 @@ add_filter( 'md_taxonomy_meta', 'md_add_taxonomy_meta' );
 add_action('md_hook_header_aside', 'trigger_hook'); */
 /* function md_child_theme_image_sizes( $sizes ) {
 	$sizes['md-banner'] = array(
-		'width' => 700,
-		'height' => 350
+		'width' => 720,
+		'height' => 300
 	);
 	return $sizes;
 }
@@ -165,11 +166,10 @@ remove_action( 'md_hook_content_item', 'md_comments', 60 );
 	}
 } 
 add_action ('md_hook_content_box_bottom', 'yarpp_insert', 63); */
-/* add_action( 'template_redirect', 'removex_my_action');
-
-function removex_my_action(){
-if(is_singular(array('page', 'resource'))){
-     remove_action( 'md_hook_content_item', 'md_comments', 60 );
+/* add_action( 'template_redirect', 'removecomm_my_action');
+function removecomm_my_action(){
+if(is_singular('1068933')){
+     add_action( 'md_hook_content_item', 'md_comments', 61 );
 }
 } */
 /**
@@ -184,28 +184,39 @@ if(is_singular(array('page', 'resource'))){
 }
 
 add_filter( 'md_filter_logo_alt', 'md_child_logo_style' ); */
-function new_loop_front(){
+
+/* function new_loop_front(){
 	if(is_front_page()){
 		get_template_part( 'templates/loops/loop', 'home' );
 	}
-// 	if(is_page('toolbox')){
-// 		get_template_part( 'templates/loops/loop', 'coupons' );
-// 	}
+	 if(is_page('toolbox')){
+		get_template_part( 'templates/loops/loop', 'coupons' );
+	}
 }
-add_action('md_hook_before_footer', 'new_loop_front', 1);
-function the_404_imporove(){
+add_action('md_hook_before_footer', 'new_loop_front', 1); */
+/* function the_404_imporove(){
 	if(is_404()){?>
 <div class="404-image">
 <img src="https://gauravtiwari.org/wp-content/uploads/2021/04/404-image.png" alt="Not Found" loading=lazy>
 </div>
 <?php	}
 }
-add_action('md_hook_headline_top', 'the_404_imporove');
+add_action('md_hook_headline_top', 'the_404_imporove'); */
 /* Sidebar for Custom Post Types */ 
 function md_child_theme_sidebars_post_types( $sidebars ) {
 	$sidebars['deal'] = array(
 		'archive' => true,
-		'single'  => true
+		'single'  => true,
+		'deal_type' => true
+	);
+	$sidebars['tool'] = array(
+		'archive' => true,
+		'single'  => true,
+		'tool_type' => true
+	);
+	$sidebars['glossary'] = array(
+		'archive' => false,
+		'single'  => false
 	);
 	return $sidebars;
 }
@@ -220,15 +231,6 @@ add_filter( 'md_filter_sidebars_post_types', 'md_child_theme_sidebars_post_types
 }
 }
 add_action( 'md_hook_content_box_bottom', 'add_rank_math_breadcrumbs', 100 ); */
-function calculator_hook(){
-	$post = get_post();
-if ( 1020683 == $post->post_parent && is_page() ) {?>
-<div class="text-center block-single-tb buttons">
-	<a class="link" href="/calculators/">View more calculators</a>
-</div>
-<?php }
-}
-add_action( 'md_hook_content_item', 'calculator_hook', 62 );
 // DEAL AND COUPONS BUTTONS and PROMOCODES
 /* function deal_btns() {
 if ( is_singular( array('deal','coupon') ) ) {?>
@@ -254,16 +256,31 @@ function md_child_theme_footer_columns() {
 }
 add_filter( 'md_filter_footer_columns', 'md_child_theme_footer_columns' );
 // add_theme_support( 'editor-color-palette', array());
-add_filter('wp_nav_menu_items', 'do_shortcode');
+// add_filter('wp_nav_menu_items', 'do_shortcode');
 /**
  * Unset CSS template by file names from style.css.
  *
  * @since 1.0
- */
 
+*/
 function md_gt_templates( $templates ) {
+
     unset( $templates['comments'] );
+
+   // $templates['nblocks'] = get_stylesheet_directory() . '/custom-blocks.css'; // load from child theme
+ 
     return $templates;
+
 }
 
-add_filter( 'md_style_css_templates', 'md_gt_templates' );
+add_filter( 'md_style_css_templates', 'md_gt_templates', 1 );
+function md_child_theme_image_sizes( $sizes ) {
+	unset( $sizes['md-full'] );
+	unset( $sizes['md-image'] );
+// 	unset( $sizes['md-book'] );
+	unset( $sizes['md-thumbnail'] );
+	return $sizes;
+}
+
+add_filter( 'md_filter_image_sizes', 'md_child_theme_image_sizes' );
+// add_theme_support( 'block-template-parts' );

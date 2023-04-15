@@ -16,7 +16,8 @@ namespace PWA_Offline_Template;
               <p class="has-text-align-center">Uh oh!</p>
               <h1 class="has-text-align-center">You are offline.</h1>
               <?php wp_service_worker_error_message_placeholder(); ?>
-              <p >I know this sucks. But can you retry reloading this page? You can also <a href="/">return back to homepage</a> to see if this is temporary.</p>
+              <p >I know this sucks. But can you retry <button onClick="window.location.href=window.location.href">reloading this page</button>? You can also <a href="/">return back to homepage</a> to see if this is temporary.</p>
+				<a href="https://play.google.com/store/apps/details?id=org.gauravtiwari.app&hl=en_IN" rel="nofollow">You can install my android app to browse articles offline.</a>
             </div>
           </div>
       </article>

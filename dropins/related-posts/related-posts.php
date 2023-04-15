@@ -20,7 +20,7 @@ class md_related_posts {
 	public $settings = array(
 		'title' => 'You may also like these',
 		'post_count' => 6,
-		'columns' => 2
+		'columns' => 3
 	);
 
 	/**
@@ -41,7 +41,7 @@ class md_related_posts {
 
 	public function templates() {
 		if ( is_singular( array('post', 'snippet', 'portfolio', 'deal') ) )
-			add_action( 'md_hook_content_item', array( $this, 'loop' ), 41 );
+			add_action( 'md_hook_before_footer', array( $this, 'loop' ), 2 );
 	}
 
 	/**

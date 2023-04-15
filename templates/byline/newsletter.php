@@ -1,0 +1,1 @@
+<?php if (is_singular('post','deal')){ ?> <span class="byline-cta byline-item"><?php echo md_icon( 'mail-alt' ); ?> <?php echo do_shortcode('[boxzilla_link box="1094329" action="show""]Get Newsletter[/boxzilla_link]');?></span><?php }?>
