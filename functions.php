@@ -9,27 +9,6 @@ define( 'MD_CHILD_URL', trailingslashit( get_stylesheet_directory_uri() ) );
 require_once( get_template_directory() . '/lib/marketers-delight.php' );
 require_once( 'loader.php' );
 
-// run MD design mode (rebuilds dynamic CSS from style.php on every page load)
-// md_compile();
-// dropins
-// include( 'dropins/docs/docs.php' );
-// include( 'dropins/extend/extend.php' );
-// include( 'dropins/related-posts/related-posts.php' );
-/* function md_new_remove_wp_block_library_css(){
-    wp_dequeue_style( 'wp-block-library' );
-    wp_dequeue_style( 'wp-block-library-theme' );
-    wp_dequeue_style( 'wc-blocks-style' ); // Remove WooCommerce block CSS
-} 
-add_action( 'wp_enqueue_scripts', 'md_new_remove_wp_block_library_css', 100 ); */
-/* function custom_blocks_css() {
-	if (is_singular() && !(is_front_page())) {
-		wp_enqueue_style( 
-      'custom-block', 
-      get_stylesheet_directory_uri() . '/custom-blocks.css' 
-    );
-  }
-}
-add_action( 'wp_enqueue_scripts', 'custom_blocks_css', 1 ); */
 function new_code(){
 	if(is_page('wordpress-plugins')){
 		get_template_part( 'templates/loops/loop', 'plugins' );
@@ -39,48 +18,13 @@ function new_code(){
 	} */
 }
 add_action('md_hook_after_content', 'new_code', 330);
-/* function sidebar_deal_ad(){
-	get_template_part( 'templates/loops/loop', 'coupon' );
-}
-add_action('md_hook_after_sidebar', 'sidebar_deal_ad', 330); */
-/* function post_series_fix(){
-	if(is_tax('post_series')){
-	remove_action( 'md_hook_content', 'md_loop' );
-	remove_action( 'md_hook_content', 'md_pagination', 30 );
-}
-}
-add_action('template_redirect', 'post_series_fix'); */
-/* function category_cleanr(){
-	if(is_category('hosting')){
-	remove_action( 'md_hook_content', 'md_loop' );
-	remove_action( 'md_hook_content', 'md_pagination', 30 );
-}
-}
-add_action('template_redirect', 'category_cleanr'); */
+
 function remove_byline_select(){
 	if(is_singular(array('glossary','docs','download'))){
 	remove_action( 'md_hook_after_headline', 'md_byline' );
 }
 }
 add_action('template_redirect', 'remove_byline_select');
-/* Remove Jetpack Sharedaddy Sharing from post excerpts */
-
-// add_action( 'init', 'remove_sharedaddy_excerpt_sharing', 20 );
-
-/* function remove_sharedaddy_excerpt_sharing() {
-   remove_filter( 'the_excerpt', 'sharing_display', 19 );
-} */
-/* function single_offers(){
-	if(is_singular(array('post','deal'))){
-		echo do_shortcode('[sc name="mo-after-post"][/sc]');
-	}
-}
-add_action('md_hook_content_item', 'single_offers', 40); */
-// function md_child_theme_posts_slider() {
-// 	get_template_part( 'templates/loops/posts', 'slider' );
-// }
-
-// add_action( 'md_hook_after_header', 'md_child_theme_posts_slider' ); */
 function md_child_sidebar() {
     if ( is_search() || is_author() || is_post_type_archive() || is_tag() || is_archive() || is_tax()) {
         add_filter( 'md_filter_has_sidebar', '__return_true' );
@@ -123,86 +67,7 @@ function md_add_taxonomy_meta( $taxonomy ) {
     return $taxonomy;
 }
 add_filter( 'md_taxonomy_meta', 'md_add_taxonomy_meta' );
-/* function trigger_hook() {?>
-<form role="search" method="get" id="searchform" class="search-form form-attached clear search-form-small" action="https://gauravtiwari.org">
-	<input type="search" class="search-input form-input" placeholder="Search for articles…" value="" name="s" id="s">
-			<input type="hidden" name="post_type" value="post">
-		<button type="submit" class="search-submit form-submit md-icon-search" id="searchsubmit"></button>
-</form>
-	<?php }
-add_action('md_hook_header_aside', 'trigger_hook'); */
-/* function md_child_theme_image_sizes( $sizes ) {
-	$sizes['md-banner'] = array(
-		'width' => 720,
-		'height' => 300
-	);
-	return $sizes;
-}
-add_filter( 'md_filter_image_sizes', 'md_child_theme_image_sizes', 330); */
-// include('taxon-shortcode.php');
-  /* function featured_image_on_top(){
-if ( is_singular(array('post', 'glossary')) && in_array( $position, array( '', 'remove' ) ) ) ?>
-	<?php md_featured_image( 'alignfull text-featured', 'md-banner' ); ?>
-<?php }
-add_action ('md_hook_content_item', 'featured_image_on_top', 10);   */
-/* function author_box_custom(){
-if ( is_singular(array('post', 'snippet')) ) ?>
-	<div class="author-box block-single">
-	<div class="avatar-image"><?php echo get_avatar( get_the_author_meta( 'ID' ), 40);?></div>
-		<h5 class="author-title"><?php printf( get_the_author_meta( 'display_name') );?></h5>
-	<div class="author-summary">
-		<p class="author-description"><?php echo links_add_target(get_the_author_meta( 'description' )); ?></p>
-	</div>
-</div>
-<?php }
-add_action ('md_hook_content_item', 'author_box_custom', 50); */
 remove_action( 'md_hook_content_item', 'md_comments', 60 );
-// remove_action( 'md_hook_content_item', 'md_post_nav', 70 );
-// add_action( 'md_hook_content_item', 'md_comments', 70 );
-// add_action( 'md_hook_content_box_bottom', 'md_post_nav', 62 );
-/* function yarpp_insert(){
-	if(is_singular(array('post', 'deal', 'docs', 'snippet', 'stream'))){
-		yarpp_related();
-	}
-} 
-add_action ('md_hook_content_box_bottom', 'yarpp_insert', 63); */
-/* add_action( 'template_redirect', 'removecomm_my_action');
-function removecomm_my_action(){
-if(is_singular('1068933')){
-     add_action( 'md_hook_content_item', 'md_comments', 61 );
-}
-} */
-/**
- * Enable alternate logo on conditions.
- *
- * @since 1.0
- * */
-
-/* function md_child_logo_style() {
-    if ( is_front_page() )
-        return true;
-}
-
-add_filter( 'md_filter_logo_alt', 'md_child_logo_style' ); */
-
-/* function new_loop_front(){
-	if(is_front_page()){
-		get_template_part( 'templates/loops/loop', 'home' );
-	}
-	 if(is_page('toolbox')){
-		get_template_part( 'templates/loops/loop', 'coupons' );
-	}
-}
-add_action('md_hook_before_footer', 'new_loop_front', 1); */
-/* function the_404_imporove(){
-	if(is_404()){?>
-<div class="404-image">
-<img src="https://gauravtiwari.org/wp-content/uploads/2021/04/404-image.png" alt="Not Found" loading=lazy>
-</div>
-<?php	}
-}
-add_action('md_hook_headline_top', 'the_404_imporove'); */
-/* Sidebar for Custom Post Types */ 
 function md_child_theme_sidebars_post_types( $sidebars ) {
 	$sidebars['deal'] = array(
 		'archive' => true,
@@ -221,53 +86,15 @@ function md_child_theme_sidebars_post_types( $sidebars ) {
 	return $sidebars;
 }
 add_filter( 'md_filter_sidebars_post_types', 'md_child_theme_sidebars_post_types' );
-/* function add_rank_math_breadcrumbs(){
-	if(is_singular('post','stream', 'bookshelf', 'glossary','deal', 'snippet')){
-		if (function_exists('rank_math_the_breadcrumbs')){?>
-<div class="inner block-half">
-<?php rank_math_the_breadcrumbs(); ?>
-</div>
-	<?php }
-}
-}
-add_action( 'md_hook_content_box_bottom', 'add_rank_math_breadcrumbs', 100 ); */
-// DEAL AND COUPONS BUTTONS and PROMOCODES
-/* function deal_btns() {
-if ( is_singular( array('deal','coupon') ) ) {?>
-  <?php if (get_field('coupon_url')): ?>
-    <a class="button button-arrow" href="<?php the_field('coupon_url');?>" target="_blank" rel="nofollow sponsored"><?php the_field('coupon_text');?></a>
-  <?php endif;?>
-  <?php if (get_field('promo_code')): ?>
-    <a class="button coupon-button" href="<?php the_field('coupon_url');?>" target="_blank" rel="nofollow sponsored"><?php the_field('promo_code');?></a>
-  <?php endif;?>
-<style>.byline{display:none;} a.button.coupon-button { background: aliceblue; border: 2px dashed #333; color: #111; box-shadow: none; text-transform: uppercase; letter-spacing: 2px; } .headline{margin-bottom:50px}</style>
-<?php }
-
-}
-add_action ('md_hook_after_headline', 'deal_btns');
-function md_child_logo_style() {
-    if (is_page('7172'))
-        return true;
-}
-
-add_filter( 'md_filter_logo_alt', 'md_child_logo_style' ); */
 function md_child_theme_footer_columns() {
 	return array( 1, 2, 3, 4 );
 }
 add_filter( 'md_filter_footer_columns', 'md_child_theme_footer_columns' );
-// add_theme_support( 'editor-color-palette', array());
-// add_filter('wp_nav_menu_items', 'do_shortcode');
-/**
- * Unset CSS template by file names from style.css.
- *
- * @since 1.0
-
-*/
 function md_gt_templates( $templates ) {
 
     unset( $templates['comments'] );
 
-   // $templates['nblocks'] = get_stylesheet_directory() . '/custom-blocks.css'; // load from child theme
+   $templates['nblocks'] = get_stylesheet_directory() . '/custom-blocks.css'; // load from child theme
  
     return $templates;
 
@@ -284,3 +111,4 @@ function md_child_theme_image_sizes( $sizes ) {
 
 add_filter( 'md_filter_image_sizes', 'md_child_theme_image_sizes' );
 // add_theme_support( 'block-template-parts' );
+remove_theme_support( 'block-templates' );

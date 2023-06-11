@@ -3,19 +3,17 @@
   font-weight: 100 900;
   font-display: swap;
   font-style: normal;
-  src: url("https://cdn.gauravtiwari.org/static/NewInter.woff2") format("woff2-variations"),
-       url("https://cdn.gauravtiwari.org/static/NewInter.woff2") format("woff2");
-  src: url("https://cdn.gauravtiwari.org/static/NewInter.woff2") format("woff2") tech("variations");
+  src: url("https://gauravtiwari.org/static/NewInter.woff2") format("woff2-variations"),
+       url("https://gauravtiwari.org/static/NewInter.woff2") format("woff2");
+  src: url("https://gauravtiwari.org/static/NewInter.woff2") format("woff2") tech("variations");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-.highlight, .editor-styles-wrapper em {
+
+.editor-styles-wrapper .highlight, .editor-styles-wrapper em {
     background: rgb(255 215 0 / 33%);
     padding: 0 4px;
     border-radius: 5px;
     font-style: normal!important;
-}
-.editor-styles-wrapper{
-/* 	letter-spacing:-0.015em; */
 }
 div.editor-styles-wrapper .has-text-color .has-text-color, #editor .editor-post-title__block .editor-post-title__input, div.editor-styles-wrapper .has-text-color h1, div.editor-styles-wrapper .has-text-color h2, div.editor-styles-wrapper .has-text-color h3, div.editor-styles-wrapper .has-text-color h4, div.editor-styles-wrapper .has-text-color h5, div.editor-styles-wrapper .has-text-color h6 {
     color: inherit;
@@ -82,15 +80,6 @@ font-family: md-icon; margin-right:10px;
 }
 .note{background:#fff6c8;border:2px solid #333;border-radius:10px;}
 figcaption:before{content:'\o ';font-family:gt-icons;font-style:normal!important;}
-table{border:1px solid #001947;border-collapse:collapse;border-spacing:0;empty-cells:show;font-size:90%;}
-table td,table th{border-width:0 0 0 1px;margin:0;overflow:visible;padding:.5em 1em;}
-table td{border:1px solid #001947;}
-table thead th:not(:last-child){border-right:1px solid #aaa!important;}
-table tbody>tr:last-child>td{border-bottom-width:0;}
-thead{
-    background:#001947; color:#fff;
-    border:2px solid #001947;
-}
 .blocks-shortcode__textarea, .wp-block textarea{
   font-family:monospace;
   font-size:14px
@@ -340,11 +329,7 @@ color:#cbff96;
 strong, .bold, b{
 	font-weight:600
 }
-.gradient-text {
-	color:inherit;
-    -webkit-background-clip: text!important;
-    -webkit-text-fill-color: transparent
-}
+
 .wp-block.gb-is-root-block.gb-root-block-generateblocks-container, .wp-block.alignfull, .is-layout-constrained .alignfull {
     max-width: none;
 }
@@ -388,5 +373,20 @@ blockquote {
 }
 
 .editor-styles-wrapper.page-template-premium-builder-php .wp-block, .editor-styles-wrapper.page-template-builder-php .wp-block{
-    max-width:1200px;
+/* 	width:100%; */
+    max-width:none!important;
+}
+.editor-styles-wrapper .inner, .editor-styles-wrapper.page-template-premium-builder-php .wp-block.inner, .editor-styles-wrapper.page-template-builder-php .wp-block.inner{
+max-width:1200px!important; margin-left:auto; margin-right:auto;
+}
+.is-style-gradient-heading {
+    background-image: -webkit-gradient(linear, left top, right top, from(#dec880), color-stop(27%, #fff), color-stop(57%, #ff3980), to(#827ded));
+    background-image: linear-gradient(93deg, var(--wp--preset--color--vivid-red), var(--global-palette3) 27%, var(--wp--preset--color--action) 57%, var(--wp--preset--color--vivid-purple));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.editor-styles-wrapper.page-template-premium-builder-php .is-layout-flow > .gb-is-root-block, .editor-styles-wrapper.page-template-builder-php  .is-layout-flow > .gb-is-root-block, .editor-styles-wrapper.page-template-premium-builder-php .is-layout-flow > .wp-block-group, .editor-styles-wrapper.page-template-builder-php  .is-layout-flow > .wp-block-group{
+	margin-block-start:0;
+	margin-block-end:0
 }

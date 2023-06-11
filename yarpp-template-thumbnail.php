@@ -36,9 +36,9 @@ if ( isset( $_wp_additional_image_sizes['yarpp-thumbnail'] ) ) {
 ?>
 <aside class="bleed block-single mt-single" style="background-color: #F3F4F6;">
 <div class="inner text-center">
-<h3 class="aligncenter">More like this</h3>
+<h3 class="aligncenter block-single-tb" id="related-posts">More like this</h3>
 <?php if ( have_posts() ) : ?>
-<div class="grid-3" style="row-gap: 20px; column-gap: 20px; line-height:1.25">
+<div class="masonry-3" style="row-gap: 20px; column-gap: 20px; line-height:1.25">
 	<?php
 	while ( have_posts() ) :
 		the_post();

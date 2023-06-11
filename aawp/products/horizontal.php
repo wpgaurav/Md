@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 
-<div class="<?php echo $this->get_product_container_classes('aawp-product aawp-product--horizontal'); ?>" <?php $this->the_product_container(); ?>>
+<div class="<?php echo $this->get_product_container_classes('aawp-product aawp-product--horizontal'); ?> border-radius" <?php $this->the_product_container(); ?>>
 
     <?php $this->the_product_ribbons(); ?>
 	<a class="small-title block-single-tb" href="<?php echo $this->get_product_url(); ?>" title="<?php echo $this->get_product_link_title(); ?>" rel="nofollow noopener sponsored" target="_blank">
@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             <?php echo $this->get_product_description(); ?>
         </div>
     </div>
-<div class="col col2">
+<div class="col col2 block-half">
         <a class="aawp-product__image-link"
            href="<?php echo $this->get_product_image_link(); ?>" title="<?php echo $this->get_product_image_link_title(); ?>" rel="nofollow noopener sponsored" target="_blank">
             <img class="aawp-product__image shadow" src="<?php echo $this->get_product_image(); ?>" alt="<?php echo $this->get_product_image_alt(); ?>" <?php $this->the_product_image_title(); ?> />

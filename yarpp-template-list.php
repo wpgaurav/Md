@@ -1,6 +1,6 @@
 <?php
 /*
-YARPP Template: List
+YARPP Template: Comma Separated List
 Description: This template returns posts as a comma-separated list.
 Author: YARPP Team
 */
