@@ -3,7 +3,7 @@
 <?php if (function_exists('rank_math_the_breadcrumbs')) rank_math_the_breadcrumbs();?> </span>
 <?php }?>
 <style>.byline nav.rank-math-breadcrumb p:before {
-    content: '\e829';
+    content: '\e90c';
     font-family: 'md-icon';
     margin-right:5px;
 }</style>

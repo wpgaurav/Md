@@ -21,7 +21,7 @@
 				<?php endif; ?>
 				<div class="<?php echo md_teaser_classes(); ?>">
 					<?php md_hook_before_headline(); ?>
-					<h2 class="headline <?php echo in_array( 'featured-col', $post_class ) ? 'med-title': 'teaser-title'; ?>"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'md' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+					<h3 class="headline <?php echo in_array( 'featured-col', $post_class ) ? 'med-title': 'teaser-title'; ?>"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'md' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
 					<?php md_hook_after_headline(); ?>
 					<?php if ( $content !== 'hide' ) : ?>
 						<?php md_the_content(); ?>

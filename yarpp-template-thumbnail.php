@@ -34,29 +34,26 @@ if ( isset( $_wp_additional_image_sizes['yarpp-thumbnail'] ) ) {
 	$dimensions['size'] = 'md-banner'; // default
 }
 ?>
-<aside class="bleed block-single mt-single" style="background-color: #F3F4F6;">
-<div class="inner text-center">
-<h3 class="aligncenter block-single-tb" id="related-posts">More like this</h3>
+<aside class="inner mt-single">
+<div class="text-center">
+	<p class="aligncenter large-title bold" id="related-posts">More like this</p>
 <?php if ( have_posts() ) : ?>
-<div class="masonry-3" style="row-gap: 20px; column-gap: 20px; line-height:1.25">
+<ul class="grid-3" style="row-gap: 20px; column-gap: 20px; line-height:1.25; list-style:none; margin-inline:0">
 	<?php
 	while ( have_posts() ) :
 		the_post();
 		?>
 		<?php if ( has_post_thumbnail() ) : ?>
-		<div class="col has-white-background-color has-border border-radius">
-		<a href="<?php the_permalink(); ?>" rel="bookmark norewrite" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( $dimensions['size'], array( 'data-pin-nopin' => 'true' ) ); ?></a>
-	<a href="<?php the_permalink(); ?>" rel="bookmark norewrite" title="<?php the_title_attribute(); ?>" style="text-decoration:none; color:#262a5d;"><p class="mb-half block-half bold"><?php the_title(); ?></p></a>
-	</div>
+		<li class="md-card-linked main-shadow has-white-background-color list-item border-radius-10" style="display: flex; flex-direction: column; justify-content: space-between;">
+		 <figure class="noborder"><?php the_post_thumbnail( $dimensions['size'], array( 'data-pin-nopin' => 'true' ) ); ?></figure>
+			<p class="clickable-parent block-half small-title" style="font-size:1rem; line-height:1.4"><a href="<?php the_permalink(); ?>?utm_source=self&utm_medium=related&utm_campaign=related_posts" rel="bookmark norewrite" title="<?php the_title_attribute(); ?>" style="color:#00005e; text-decoration:none"><?php the_title(); ?></a></p>
+	</li>
 		<?php endif; ?>
 	<?php endwhile; ?>
-</div>
+</ul>
 
 <?php else : ?>
 <p>No related posts.</p>
 <?php endif; ?>
 </div>
 </aside>
-<style id="md-yarpp">.loop-default.style-default .post-box > div{border-bottom:0!important} .yarpp img.wp-post-image {
-    margin-bottom: 17px;
-}</style>

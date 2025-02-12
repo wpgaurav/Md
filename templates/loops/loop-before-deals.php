@@ -1,7 +1,8 @@
-<div class="gradient-cover format">
+<div class="content-box content-full style-default loop-teasers format">
 <div class="inner block-double">
+<div style="max-width:900px;margin:auto">
 <h1 id="deals">Top Deals, Offers and Coupons</h1>
-	<p class="intro block-single-tb">
+<p class="intro block-single-tb">
 		Hundreds of hand-picked coupons, promo codes, discounts and deals on Marketing, Blogging, Software and more. I search the web to find the best coupons and discounts. So you don't have to. All these deals are independently curated and created with just one goal in mind — to help you save the maximum.
 	</p>
 	<p>Look no further if you are tired of scouring the internet for the best deals on marketing, blogging, software, education, and more? ! I've got your back with hundreds of hand-picked coupons, promo codes, discounts, and deals designed to save you time and money!</p>
@@ -14,4 +15,13 @@
 			<input type="hidden" name="post_type" value="deal">
 		<button type="submit" class="search-submit form-submit md-icon-search" id="searchsubmit"></button>
 </form>
-	<br> </div></div>
+	<br>
+	<h2 class="large-title block-single-tb text-center">
+		Latest and Hottest Deals
+	</h2>
+	</div>
+	<div class="blog-teasers columns-3 columns-single columns-flex">
+	<?php get_template_part( 'templates/loops/loop', 'teasers-new' );?>
+</div>
+	</div>
+</div>

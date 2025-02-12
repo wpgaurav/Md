@@ -1,0 +1,5 @@
+.gt-full-width > :not(.alignfull, .alignwide) {
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}

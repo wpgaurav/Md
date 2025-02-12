@@ -27,17 +27,17 @@ Notes:
 <aside class="yarpp-photolist alignright has-white-background-color has-border border-radius width-50 mb-single shadow" style="font-size:16px; line-height:1.3; z-index:10;">
 	<p class="mb-half block-half bold has-border-bottom has-latest-green-background-color has-almond-color" style="border-radius:5px 5px 0 0">Related</p>
 <?php if ( have_posts() ) : ?>
- <div class="md-inline-related block-half-tb">
+ <ul class="md-inline-related block-half-tb list text-left">
 	 <?php
 	while ( have_posts() ) :
 		the_post();
 		?>
-	 <div class="single-related box-lr block-half-lr" style="display:block; clear:both; margin-bottom:5px">
-	<a href="<?php the_permalink(); ?>" rel="bookmark norewrite" title="<?php the_title_attribute(); ?>" class="md-thumbnail noborder nomobile"><?php the_post_thumbnail( 'md-thumbnail', array( 'class' => 'noborder alignleft circle', 'style' => 'width:40px; height:auto' ) ); ?></a>
-	<a href="<?php the_permalink(); ?>" rel="bookmark norewrite" title="<?php the_title_attribute(); ?>" style="color:#00005e; text-decoration:none; display:block; font-weight:500"><?php the_title(); ?></a>
-   </div>
+	 <li class="single-related box-lr block-half-lr" style="display:block; clear:both; margin-bottom:5px">
+	<a href="<?php the_permalink(); ?>" rel="bookmark norewrite" title="<?php the_title_attribute(); ?>" class="md-thumbnail noborder"><?php the_post_thumbnail( 'md-thumbnail', array( 'class' => 'noborder alignleft circle', 'style' => 'width:40px; height:40px; float:left; margin-right:8px' ) ); ?></a>
+	<a href="<?php the_permalink(); ?>" rel="bookmark norewrite" title="<?php the_title_attribute(); ?>" style="color:#00005e; text-decoration:none; display:block; border:0"><?php the_title(); ?></a>
+   </li>
 	 <?php endwhile; ?>
-	</div>
+	</ul>
 	<?php else : ?>
 <p>No related posts.</p>
 <?php endif; ?>

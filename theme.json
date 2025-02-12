@@ -1,455 +1,375 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
-	"version": 2,
-    "settings": {
-      "color": {
-        "defaultPalette": false,
-        "duotone": [],
-        "customDuotone": false,
-        "defaultGradients": true,
-		"customGradient": true,
-        "palette": [
-		{
-            "name": "Primary",
-            "slug": "primary",
-            "color": "#c0392b" 
-        },
-        {
-            "name": "Secondary",
-            "slug": "secondary",
-            "color": "#43a047" 
-        },
-          {
-            "name": "Tertiary",
-            "slug": "tertiary",
-            "color": "#001e12"
-          },
-          {
-            "name": "Action",
-            "slug": "action",
-            "color": "#1944a8"
-          },
-          {
-            "name": "Accent New",
-            "slug": "accent-new",
-            "color": "#F7B500"
-          },
-          {
-            "name": "White",
-            "slug": "white",
-            "color": "#ffffff"
-          },
-          {
-            "name": "Text Secondary",
-            "slug": "text-sec",
-            "color": "#555555"
-          },
-          {
-            "name": "Button Secondary",
-            "slug": "button-sec",
-            "color": "#001947"
-          },
-          {
-            "name": "Almond",
-            "slug": "almond",
-            "color": "#fcf9f5"
-          },
-          {
-            "name": "Bodified",
-            "slug": "bodified",
-            "color": "#faf8f6"
-          },
-          {
-            "name": "BlueAlice",
-            "slug": "aliceblue",
-            "color": "#f0f8ff"
-          },
-          {
-            "name": "Peach",
-            "slug": "peach",
-            "color": "#ffdab9"
-          },
-          {
-            "name": "Thistle",
-            "slug": "thistle",
-            "color": "#d8bfd8"
-          },
-          {
-            "name": "Yellow Green",
-            "slug": "yellow-green",
-            "color": "#9acd32"
-          },
-			{
-            "name": "Bordered",
-            "slug": "bordered",
-            "color": "#e5e7eb"
-          },
-			{
-            "name": "BG Highlight",
-            "slug": "bg-highlight",
-            "color": "#111827"
-          },
-			{
-            "name": "Off White",
-            "slug": "offwhite",
-            "color": "#F6F6F6"
-          },
-			{
-            "name": "Subtle Green",
-            "slug": "subtle-green",
-            "color": "#117c68"
-          },
-		{
-            "name": "Green Card",
-            "slug": "green-card",
-            "color": "#f1fdf8"
-          },
-		{
-            "name": "Orange Card",
-            "slug": "orange-card",
-            "color": "#fef1f0"
-          },
-		{
-            "name": "Red Card",
-            "slug": "red-card",
-            "color": "#ffe7e7"
-          },
-		{
-            "name": "My Yellow",
-            "slug": "my-yellow",
-            "color": "#ffd700"
-          },
-		{
-            "name": "Latest Green",
-            "slug": "latest-green",
-            "color": "#6fa11e"
-          },
-		{
-            "name": "Shade Yellow",
-            "slug": "shade-yellow",
-            "color": "#ffdf88"
-          },
-		{
-            "name": "Latest Red",
-            "slug": "latest-red",
-            "color": "#c62035"
-          },
-		{
-            "name": "TextShade",
-            "slug": "textshade",
-            "color": "#263055"
-          }
-        ],
-		"gradients": [
+	"version": 3,
+	"settings": {
+		"appearanceTools": true,
+		"color": {
+			"defaultDuotone": false,
+			"defaultGradients": false,
+			"defaultPalette": false,
+			"palette": [
 				{
-					"slug": "subtle-green-to-light",
-					"gradient": "linear-gradient(180deg, #d3fff5, #ffffff)",
-					"name": "Subtle Green to Light"
-				},
-			{
-					"slug": "hard-green-to-green",
-					"gradient": "linear-gradient(#9ec14c,#41b14f)",
-					"name": "Hard Green to Green"
-				},
-			{
-					"slug": "button-yellow",
-					"gradient": "linear-gradient(#ffd700, #F7B500)",
-					"name": "Button Yellow"
-				},
-			{
-					"slug": "theme-black",
-					"gradient": "linear-gradient(220.55deg,#222 0%,#5d1818 100%)",
-					"name": "Theme Black"
-				},
-			{
-					"slug": "theme-purple",
-					"gradient": "linear-gradient(220.55deg, #A531DC 0%, #4300B1 100%)",
-					"name": "Theme Purple"
-				},
-			{
-					"slug": "theme-rednew",
-					"gradient": "radial-gradient(circle, rgba(160,4,26,1) 0%, rgba(36,2,46,1) 100%)",
-					"name": "Theme RedNew"
-				},
-			{
-					"slug": "theme-yellow",
-					"gradient": "linear-gradient( 109.6deg,  rgba(255,207,84,1) 11.2%, rgba(255,158,27,1) 91.1% )",
-					"name": "Theme Yellow"
-				},
-			
-			{
-					"slug": "theme-green",
-					"gradient": "radial-gradient( circle farthest-corner at -1% 57.5%,  rgba(19,170,82,1) 0%, rgba(0,102,43,1) 90% )",
-					"name": "Theme Green"
-				},
-			
-			{
-					"slug": "theme-blue",
-					"gradient": "radial-gradient( circle 609.6px at 21.5% 78.8%,  rgba(37,99,219,1) 0%, rgba(233,45,181,1) 89.9% )",
-					"name": "Theme Blue"
-				},
-			
-			{
-					"slug": "theme-red",
-					"gradient": "linear-gradient( 179.4deg,  rgba(132,56,122,1) 14.6%, rgba(190,24,49,1) 104.7% )",
-					"name": "Theme Red"
-				},
-			
-			{
-					"slug": "theme-default",
-					"gradient": "radial-gradient( circle farthest-corner at 10% 20%,  rgba(14,174,87,1) 0%, rgba(12,116,117,1) 90% )",
-					"name": "Theme Default"
-				}
-			]
-      },
-	"appearanceTools": true,
-	"spacing": {
-		"blockGap": true,
-        "margin": true,
-        "padding": true,
-        "units": ["%","px","em","rem","vh","vw"],
-        "spacingScale": {
-            "steps": 0
-        },
-        "spacingSizes": [
-            {
-                "size": "clamp(0.5rem, 2vw, 0.7rem)",
-                "slug": "30",
-                "name": "1"
-            },
-            {
-                "size": "clamp(0.6rem, 0.6rem + ((1vw - 0.48rem) * 1.65), 1rem)",
-                "slug": "40",
-                "name": "2"
-            },
-            {
-                "size": "clamp(1rem, 3vw, 2.5rem)",
-                "slug": "50",
-                "name": "3"
-            },
-            {
-                "size": "clamp(1.25rem, 3.33vw, 3.33rem)",
-                "slug": "60",
-                "name": "4"
-            },
-            {
-                "size": "clamp(2rem, 2.25rem + ((1vw - 0.48rem) * 3.096), 4rem)",
-                "slug": "70",
-                "name": "5"
-            },
-            {
-                "size": "clamp(3rem, 7vw, 6rem)",
-                "slug": "80",
-                "name": "6"
-            }
-        ]
-        },
-	"layout": {
-        "contentSize": "750px",
-        "wideSize": "960px"
-      },
-	"typography": {
-		  "customFontSize": true,
-		  "customLineHeight": true,
-		  "dropCap": true,
-		  "fluid": true,
-		"fontFamilies": [
-				{
-					"fontFamily": "SF Pro,ui-sans-serif,sans-serif",
-					"name": "System",
+					"name": "Primary",
 					"slug": "primary",
-					"fontFace": []
+					"color": "#C0392B" 
 				},
 				{
-					"fontFamily": "monospace",
-					"name": "Monospace",
-					"slug": "monospace",
-					"fontFace": []
+					"name": "Secondary",
+					"slug": "secondary",
+					"color": "#262A5D" 
+				},
+				{
+					"name": "Tertiary",
+					"slug": "tertiary",
+					"color": "#001e12"
+				},
+				{
+					"name": "Action",
+					"slug": "action",
+					"color": "#1944a8"
+				},
+				{
+					"name": "Accent",
+					"slug": "accent",
+					"color": "#F7B500"
+				},
+				{
+					"name": "Accent New",
+					"slug": "accent-new",
+					"color": "#ffd700"
+				},
+				{
+					"name": "White",
+					"slug": "white",
+					"color": "#ffffff"
+				},
+				{
+					"name": "Text Secondary",
+					"slug": "text-sec",
+					"color": "#555555"
+				},
+				{
+					"name": "Button Secondary",
+					"slug": "button-sec",
+					"color": "#001947"
+				},
+				{
+					"name": "Almond",
+					"slug": "almond",
+					"color": "#fcf9f5"
+				},
+				{
+					"name": "Bodified",
+					"slug": "bodified",
+					"color": "#faf8f6"
+				},
+				{
+					"name": "BlueAlice",
+					"slug": "aliceblue",
+					"color": "#f0f8ff"
+				},
+				{
+					"name": "Peach",
+					"slug": "peach",
+					"color": "#ffdab9"
+				},
+				{
+					"name": "Thistle",
+					"slug": "thistle",
+					"color": "#d8bfd8"
+				},
+				{
+					"name": "Yellow Green",
+					"slug": "yellow-green",
+					"color": "#9acd32"
+				},
+				{
+					"name": "Bordered",
+					"slug": "bordered",
+					"color": "#e5e7eb"
+				},
+				{
+					"name": "BG Highlight",
+					"slug": "bg-highlight",
+					"color": "#111827"
+				},
+				{
+					"name": "Off White",
+					"slug": "offwhite",
+					"color": "#F6F6F6"
+				},
+				{
+					"name": "Subtle Green",
+					"slug": "subtle-green",
+					"color": "#117c68"
+				},
+				{
+					"name": "Green Card",
+					"slug": "green-card",
+					"color": "#f1fdf8"
+				},
+				{
+					"name": "Orange Card",
+					"slug": "orange-card",
+					"color": "#fef1f0"
+				},
+				{
+					"name": "Red Card",
+					"slug": "red-card",
+					"color": "#ffe7e7"
+				},
+				{
+					"name": "My Yellow",
+					"slug": "my-yellow",
+					"color": "#ffd700"
+				},
+				{
+					"name": "Latest Green",
+					"slug": "latest-green",
+					"color": "#6fa11e"
+				},
+				{
+					"name": "Shade Yellow",
+					"slug": "shade-yellow",
+					"color": "#ffdf88"
+				},
+				{
+					"name": "Latest Red",
+					"slug": "latest-red",
+					"color": "#c0392b"
+				},
+				{
+					"name": "TextShade",
+					"slug": "textshade",
+					"color": "#080808"
+				},
+				{
+					"name": "Blue",
+					"slug": "blue",
+					"color": "#3533cd"
 				}
 			],
+			"gradients": [
+				{
+					"slug": "subtle-green-to-light",
+					"gradient": "linear-gradient(180deg, #f1fdf8, #ffffff)",
+					"name": "Subtle Green to Light"
+				},
+				{
+					"slug": "button",
+					"gradient": "linear-gradient(to bottom, #F7B500, #C0392B)",
+					"name": "Button"
+				},
+				{
+					"slug": "brand-blue",
+					"gradient": "linear-gradient(135deg, #262A5D, #3533cd)",
+					"name": "Brand Blue"
+				},
+				{
+					"slug": "brand-blue-alt",
+					"gradient": "linear-gradient(135deg, #262A5D, #1b1a91, #46097c)",
+					"name": "Brand Blue Alt"
+				},
+				{
+					"slug": "primary-to-accent",
+					"gradient": "linear-gradient(135deg, #C0392B, #F7B500)",
+					"name": "Primary to Accent"
+				},
+				{
+					"slug": "secondary-to-blue",
+					"gradient": "linear-gradient(45deg, #262A5D, #3533cd)",
+					"name": "Secondary to Blue"
+				},
+				{
+					"slug": "accent-to-offwhite",
+					"gradient": "linear-gradient(90deg, #F7B500, #F6F6F6)",
+					"name": "Accent to Off White"
+				},
+				{
+					"slug": "light-peach-to-white",
+					"gradient": "linear-gradient(180deg, #ffdab9, #ffffff)",
+					"name": "Light Peach to White"
+				},
+				{
+					"slug": "yellow-green-to-latest-green",
+					"gradient": "linear-gradient(135deg, #9acd32, #6fa11e)",
+					"name": "Yellow Green to Latest Green"
+				},
+				{
+					"slug": "dark-mode-bg",
+					"gradient": "linear-gradient(180deg, #111827, #080808)",
+					"name": "Dark Mode Background"
+				}
+				]
+		},
+		"layout": {
+			"contentSize": "850px",
+			"wideSize": "1024px"
+		},
+		"spacing": {
+			"defaultSpacingSizes": false,
+			"blockGap": true,
+        	"margin": true,
+        	"padding": true,
+        	"units": ["%","px","em","rem","vh","vw"],
+        	"spacingScale": {
+            	"steps": 1
+        	},
+        	"spacingSizes": [
+				{
+					"name": "3xs",
+					"size": "clamp(0.41rem, calc(0.04vw + 0.4rem), 0.44rem)",
+					"slug": "10"
+				},
+				{
+					"name": "2xs",
+					"size": "clamp(0.51rem, calc(0.16vw + 0.48rem), 0.62rem)",
+					"slug": "20"
+				},
+				{
+					"name": "xs",
+					"size": "clamp(0.64rem, calc(0.36vw + 0.57rem), 0.88rem)",
+					"slug": "30"
+				},
+				{
+					"name": "s",
+					"size": "clamp(0.8rem, calc(0.67vw + 0.67rem), 1.24rem)",
+					"slug": "40"
+				},
+				{
+					"name": "m",
+					"size": "clamp(1.2rem, calc(1.25vw + 0.81rem), 1.95rem)",
+					"slug": "50"
+				},
+				{
+					"name": "l",
+					"size": "clamp(1.25rem, calc(1.87vw + 0.88rem), 2.47rem)",
+					"slug": "60"
+				},
+				{
+					"name": "xl",
+					"size": "clamp(1.56rem, calc(2.96vw + 0.97rem), 3.5rem)",
+					"slug": "70"
+				},
+				{
+					"name": "2xl",
+					"size": "clamp(1.95rem, calc(4.58vw + 1.04rem), 4.95rem)",
+					"slug": "80"
+				}
+			]
+		},
+		"typography": {
+			"customFontSize": true,
+			"lineHeight": true,
+			"defaultFontSizes": false,
+			"fluid": true,
 			"fontSizes": [
 				{
-					"fluid": {
-						"min": "0.7rem",
-						"max": "0.9rem"
-					},
-					"size": "0.8rem",
-					"slug": "x-small",
+					"size": "clamp(0.74rem, calc(-0.05vw + 0.75rem), 0.7rem)",
+					"slug": "extra-small",
 					"name": "Extra Small"
 				},
 				{
-					"fluid": {
-						"min": "0.95rem",
-						"max": "1.05rem"
-					},
-					"size": "1rem",
-					"slug": "small"
+					"size": "clamp(0.89rem, calc(0.08vw + 0.87rem), 0.94rem)",
+					"slug": "small",
+					"name": "Small"
 				},
 				{
-					"fluid": {
-						"min": "1.1rem",
-						"max": "1.3rem"
-					},
-					"size": "1.2rem",
+					"size": "clamp(1.06rem, calc(0.29vw + 1rem), 1.25rem)",
 					"slug": "base",
 					"name": "Base"
 				},
 				{
-					"fluid": {
-						"min": "1.2rem",
-						"max": "1.6rem"
-					},
-					"size": "1.4rem",
-					"slug": "medium"
+					"size": "clamp(1.15rem, calc(0.39vw + 1.1rem), 1.4rem)",
+					"slug": "medium",
+					"name": "Medium"
 				},
 				{
-					"fluid": {
-						"min": "1.6rem",
-						"max": "2rem"
-					},
-					"size": "1.75rem",
-					"slug": "large"
+					"size": "clamp(1.27rem, calc(0.6vw + 1.16rem), 1.67rem)",
+					"slug": "large",
+					"name": "Large"
 				},
 				{
-					"fluid": {
-						"min": "2rem",
-						"max": "2.8rem"
-					},
-					"size": "2.4rem",
-					"slug": "x-large"
+					"size": "clamp(1.53rem, calc(1.06vw + 1.32rem), 2.22rem)",
+					"slug": "x-large",
+					"name": "Extra Large"
 				},
 				{
-					"fluid": {
-						"min": "2.8rem",
-						"max": "3.8rem"
-					},
-					"size": "3.3rem",
+					"size": "clamp(1.84rem, calc(1.72vw + 1.49rem), 2.96rem)",
 					"slug": "xx-large",
-					"name": "2xl"
+					"name": "Super Large"
 				},
 				{
-					"fluid": {
-						"min": "3rem",
-						"max": "4.8rem"
-					},
-					"size": "4rem",
+					"size": "clamp(2.2rem, calc(2.67vw + 1.67rem), 3.95rem)",
 					"slug": "xxx-large",
-					"name": "3xl"
+					"name": "Triple Large"
+				},
+				{
+					"size": "clamp(2.64rem, calc(4vw + 1.84rem), 5.26rem)",
+					"slug": "gigantic",
+					"name": "Gigantic"
 				}
-			],
-			"lineHeight": true
+			]
 		},
 		"useRootPaddingAwareAlignments": true
 	},
-    "styles": {
+	"styles": {
+		"spacing": {
+			"blockGap": "1.2rem"
+		},
 		"blocks": {
-			"core/paragraph": {
-				"typography": {
-					"lineHeight": "calc(1.7em + .2vw)"
-				}
-			},
 			"core/heading": {
 				"typography": {
-					"lineHeight": "calc(1em + .2vw)"
+					"lineHeight": "calc(1.1em - 2px)"
 				}
 			},
 			"core/button": {
-                "typography": {
-                    "fontWeight": "700"
-                }
-            },
-			"core/buttons": {
-                "spacing": {
-                    "blockGap": "10px"
-                }
-            },
-			"core/code": {
-                "border": {
-                    "radius": "0",
-                    "width": "0"
-                },
-                "color": {
-                    "background": "var(--wp--preset--color--bg-highlight)",
-                    "text": "var(--wp--preset--color--white)"
-                },
-				"spacing": {
-					"margin": {
-						"bottom": "1em"
-					},
-					"padding": {
-						"top": "2em",
-						"bottom": "2em",
-						"left":"1em",
-						"right":"1em"
-					}
+				"color": {
+					"background": "var:preset|color|primary",
+					"text": "var:preset|color|white"
+				},
+				"border": {
+					"radius": "var(--radius-m)"
 				}
 			},
 			"core/group": {
 				"spacing": {
 					"padding": {
-						"top": "2em",
-						"bottom": "2em",
-						"left":"1em",
-						"right":"1em"
+						"left": "var:preset|spacing|60",
+						"right": "var:preset|spacing|60",
+						"bottom": "var:preset|spacing|60",
+						"top": "var:preset|spacing|60"
 					}
-				}
-			},
-			"core/cover": {
-				"border": {
-                    "radius": "5px",
-                    "width": "0"
-                },
-				"spacing": {
-					"margin": {
-						"bottom": "1em"
-					},
-					"padding": {
-						"top": "2em",
-						"bottom": "2em",
-						"left":"1em",
-						"right":"1em"
-					}
-				}
-			},
-			"core/pullquote": {
-				"spacing": {
-					"padding": {
-						"top": "0",
-						"bottom": "0",
-						"left":"0",
-						"right":"0"
-					}
-				}
-			},
-			"core/table": {
-				"typography": {
-					"fontSize": "var(--wp--preset--font-size--small)"
 				}
 			},
 			"core/image": {
 				"spacing": {
 					"margin": {
-						"top": "1em",
-						"bottom":"1em"
+						"bottom": "var:preset|spacing|60"
+					}
+				}
+			},
+			"core/featured-image": {
+				"spacing": {
+					"margin": {
+						"bottom": "var:preset|spacing|60"
+					}
+				}
+			},
+			"core/media-text": {
+				"spacing": {
+					"margin": {
+						"bottom": "var:preset|spacing|60"
 					}
 				}
 			}
-	},
-      "elements": {
-		 "button": {
-                "border": {
-                    "radius": "4px"
-                },
-			 "color": {
-                "background": "var(--wp--preset--color--tertiary)",
-				"text": "var(--wp--preset--color--my-yellow)"
-            }
-		 },
-        "link": {
-            "color": {
-                "text": "var(--wp--preset--color--primary)"
-            }
-        }
-    }
-    }
-  }
+		},
+		"elements": {
+			"link": {
+				"color": {
+					"text": "var:preset|color|primary"
+				}
+			}
+		}
+	}
+}

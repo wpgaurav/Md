@@ -1,6 +1,6 @@
 <?php md_hook_before_header_menu(); ?>
 
-<nav class="header-menu">
+<nav class="header-menu" id="site-navigation" aria-label="Menu" itemtype="https://schema.org/SiteNavigationElement" itemscope>
 	<?php wp_nav_menu( array(
 		'theme_location' => $header_menu_location,
 		'menu' => md_meta( array( 'layout', 'header_menu' ) ),

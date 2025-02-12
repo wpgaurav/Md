@@ -1,78 +1,90 @@
 <?php if ( has_action( 'md_archives_title' ) ) : ?>
 
-	<?php do_action( 'md_archives_title' ); ?>
+    <?php do_action( 'md_archives_title' ); ?>
 
-<?php elseif ( is_category() ) :
-	$position = md_term_meta( array( 'featured_image', 'position' ) );
-	$image = md_term_meta( array( 'featured_image', 'image', 'url' ) );
-	$classes = ! empty( $position ) ? ' ' . md_headline_classes() : '';
-	$description = category_description();
+<?php elseif ( is_home() ) : 
+    $blog_page_id = get_option( 'page_for_posts' ); // Get the Blog Page ID
+    $blog_title = get_the_title( $blog_page_id );
+    $blog_content = get_post_field( 'post_content', $blog_page_id );
 ?>
 
-	<div class="gradient-cover term-title<?php echo $classes; ?> nopadding"<?php echo md_featured_image_cover( $image, $position ); ?>>
-		<div class="block-double">
-		<?php md_hook_headline_top(); ?>
-		<?php if ( ! empty( $image ) && ( in_array( $position, array( '', 'left', 'right', 'center' ) ) ) ) : ?>
-			<?php md_featured_image_tax(); ?>
-		<?php endif; ?>
-		<h1 class="headline entry-title"><?php single_cat_title(); ?></h1>
-		<?php if ( ! empty( $description ) ) : ?>
-			<div class="format block-single-tb">
-				<?php echo category_description(); ?>
-			</div>
-		<?php endif; ?>
-		<?php md_hook_headline_bottom(); ?>
-		</div></div>
+    <div class="archives-title">
+        <h1 class="headline entry-title"><?php echo $blog_title; ?></h1>
+        <?php if ( ! empty( $blog_content ) ) : ?>
+            <div class="micro-text text-sec">
+                <?php echo apply_filters( 'the_content', $blog_content ); ?>
+            </div>
+        <?php endif; ?>
+    </div>
+
+<?php elseif ( is_category() || is_tax() ) : 
+    $position = md_term_meta( array( 'featured_image', 'position' ) );
+    $image = md_term_meta( array( 'featured_image', 'image', 'url' ) );
+    $classes = ! empty( $position ) ? ' ' . md_headline_classes() : '';
+    $description = category_description();
+?>
+
+    <div class="archives-title<?php echo $classes; ?>"<?php echo md_featured_image_cover( $image, $position ); ?>>
+        <?php md_hook_headline_top(); ?>
+        <?php if ( ! empty( $image ) && in_array( $position, array( '', 'left', 'right', 'center' ), true ) ) : ?>
+            <?php md_featured_image_tax(); ?>
+        <?php endif; ?>
+        <h1 class="headline entry-title"><?php single_cat_title(); ?></h1>
+        <?php if ( ! empty( $description ) ) : ?>
+            <div class="micro-text text-sec">
+                <?php echo $description; // Raw output for category description ?>
+            </div>
+        <?php endif; ?>
+        <?php md_hook_headline_bottom(); ?>
+    </div>
 
 <?php elseif ( is_search() ) : ?>
 
-	<div class="term-title nopadding">
-		<div class="block-double">
-		<h1 class="med-title"><?php echo __( 'Search Results For: ', 'md' ); the_search_query(); ?></h1>
-		<?php get_search_form(); ?>
-		</div></div>
+    <div class="archives-title">
+        <h1 class="headline entry-title"><?php echo __( 'Search Results For:', 'md' ) . ' ' . get_search_query(); ?></h1>
+        <?php get_search_form(); ?>
+    </div>
 
 <?php elseif ( is_author() ) : ?>
 
-	<?php md_author_box(); ?>
-<?php elseif ( is_tax('deal_type') ) : ?>
-<div class="gradient-cover term-title<?php echo $classes; ?> nopadding">
-<div class="block-double">
-<h1 class="large-title">Top <?php single_term_title(); ?> Deals and Offers</h1>
-		<?php echo term_description(); ?>
-	</div></div>
-<?php elseif ( is_tag() ) : ?>
+    <?php md_author_box(); ?>
 
-	<div class="term-title nopadding"><div class="block-double">
-		<h1 class="med-title"><?php single_tag_title(); ?></h1>
-		<?php echo category_description(); ?>
-		</div></div>
+<?php elseif ( is_tag() ) : 
+    $tag_description = tag_description();
+?>
+
+    <div class="archives-title">
+        <h1 class="headline entry-title"><?php single_tag_title(); ?></h1>
+        <?php if ( ! empty( $tag_description ) ) : ?>
+            <div class="micro-text text-sec">
+                <?php echo $tag_description; // Raw output for tag description ?>
+            </div>
+        <?php endif; ?>
+    </div>
 
 <?php elseif ( is_day() ) : ?>
 
-	<div class="term-title"><div class="block-double">
-		<h1 class="med-title"><?php echo get_the_date(); ?></h1>
-		</div></div>
+    <div class="archives-title">
+        <h1 class="headline entry-title"><?php echo get_the_date(); ?></h1>
+    </div>
 
 <?php elseif ( is_month() ) : ?>
 
-	<div class="term-title"><div class="term">
-		<h1 class="med-title"><?php echo get_the_date( 'F Y' ); ?></h1>
-		</div></div>
+    <div class="archives-title">
+        <h1 class="headline entry-title"><?php echo get_the_date( 'F Y' ); ?></h1>
+    </div>
 
 <?php elseif ( is_year() ) : ?>
 
-	<div class="term-title"><div class="term">
-		<h1 class="med-title"><?php echo get_the_date( 'Y' ); ?></h1>
-		</div></div>
+    <div class="archives-title">
+        <h1 class="headline entry-title"><?php echo get_the_date( 'Y' ); ?></h1>
+    </div>
+
 <?php elseif ( is_post_type_archive() ) : ?>
 
-	<!-- <div class="term-title">
-		<h1 class="med-title">
-		<?php
-		// post_type_archive_title();
-		?>
-		</h1>
-	</div> -->
+    <div class="archives-title">
+        <h1 class="headline entry-title"><?php post_type_archive_title(); ?></h1>
+    </div>
+<?php else : ?>
 
 <?php endif; ?>

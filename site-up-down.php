@@ -5,7 +5,7 @@
  */
 ?>
 <?php get_header(); ?>
-<div class="builder format">
+<main class="builder format" id="content">
   <div class="inner white-bg accordion block-single text-center mt-single mb-single">
   <h1 class="large-title block-single-tb">Is my site up or down?</h1>
   <form class="down-tool-form form-attached" id="form" method="post" action="">
@@ -57,7 +57,7 @@ header( "Refresh:20; url=https://gauravtiwari.org/snippet/is-my-site-down-or-not
 }
 ?>
 </div>
-</div>
+</main>
 <div class="inner block-double has-border white mt-double mb-single">
  <div class="format">
   <?php if ( md_has_content_box() ) : ?>

@@ -11,12 +11,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 
-<div class="<?php echo $this->get_product_container_classes('aawp-product aawp-product--horizontal'); ?> border-radius" <?php $this->the_product_container(); ?>>
-
+<aside class="<?php echo $this->get_product_container_classes('aawp-product aawp-product--horizontal'); ?> border-radius" <?php $this->the_product_container(); ?>>
+<div class="product-title">
     <?php $this->the_product_ribbons(); ?>
-	<a class="small-title block-single-tb" href="<?php echo $this->get_product_url(); ?>" title="<?php echo $this->get_product_link_title(); ?>" rel="nofollow noopener sponsored" target="_blank">
+		<a class="small-title block-single-tb" href="<?php echo $this->get_product_url(); ?>" title="<?php echo $this->get_product_link_title(); ?>" rel="nofollow noopener sponsored" target="_blank">
             <?php echo $this->get_product_title(); ?>
         </a>
+	</div>
 <div class="columns-2 columns-single box-lr">
     <div class="col col1">
         <div class="list block-half-tb">
@@ -41,6 +42,10 @@ if ( ! defined( 'ABSPATH' ) ) {
     </div></div>
     <?php echo $this->get_button('detail'); ?>
     <?php echo $this->get_button(); ?>
+	<a href="https://www.amazon.in/s?k=<?php $clean_title = preg_replace('/[^a-zA-Z0-9\s]/', '', $this->get_product_title());
+$title_words = explode(' ', $clean_title);
+$limited_title = array_slice($title_words, 0, 5);
+echo implode('+', $limited_title);?>&tag=gaurtiwa-21" rel="nofollow sponsored" class="aawp-button amz-india-button" style="margin-left:0">Find it on Amazon.in</a>
     <div class="aawp-product__footer">
         <div class="aawp-product__pricing">
             <?php if ( $this->product_is_on_sale() ) { ?>
@@ -64,4 +69,4 @@ if ( ! defined( 'ABSPATH' ) ) {
         <?php } ?>
     </div>
 
-</div>
+</aside>

@@ -1,4 +1,4 @@
-<nav id="main_menu" class="main-menu">
+<nav id="main_menu" class="main-menu" aria-label="Main Menu" itemtype="https://schema.org/SiteNavigationElement" itemscope>
 	<div class="inner">
 
 		<div class="main-menu-triggers main-menu-triggers-<?php echo md_main_menu_items(); ?> clear">

@@ -1,22 +1,16 @@
 <?php if ( md_filter_template() !== false ) : ?>
-
 	<?php md_hook_before_footer(); ?>
-
 	<?php if ( md_has_footer() ) : ?>
-		<footer id="footer" class="footer format<?php echo md_footer_classes(); ?>" itemtype="https://schema.org/WPFooter" itemscope>
+<footer id="footer" class="footer format<?php echo md_footer_classes(); ?>" itemtype="https://schema.org/WPFooter" itemscope>
 			<?php md_hook_footer_top(); ?>
-			<div class="inner">
+<div class="inner wider">
 				<?php md_hook_footer(); ?>
-			</div>
+</div>
 			<?php md_hook_footer_bottom(); ?>
-		</footer>
+</footer>
 	<?php endif; ?>
-
 	<?php md_hook_after_footer(); ?>
-
 <?php endif; ?>
-
 <?php wp_footer(); ?>
-
 </body>
 </html>
